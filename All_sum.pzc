@@ -1,0 +1,17 @@
+SetPath "Y:\Lab\Qiao_public\dataimages\Qiao\Rabies Subiculum Tracing\Figure making\Statistics\CSI PI Summary\"
+Open Sum_04112023_auto.pzfx
+GoTo D
+ForEach All_sum*.csv
+  DuplicateFamily 
+  ClearTable 1
+  
+  Import  %F.csv, 2, -1  
+  Copy 2,97,2,-1
+
+  Paste 1, -1 
+  SetSheetTitle %F 
+
+Next
+Beep
+
+CreateLayout 1 4  2  3

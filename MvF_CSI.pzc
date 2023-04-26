@@ -1,0 +1,17 @@
+SetPath "Y:\Lab\Qiao_public\dataimages\Qiao\Rabies Subiculum Tracing\Figure making\Statistics\CSI PI Summary\"
+Open CSI_MvF_04102023_auto.pzfx
+GoTo D
+ForEach *MvF_CSI_*.csv
+  DuplicateFamily 
+  ClearTable 1
+  
+  Import  %F.csv, 2, -1  
+  Copy 2,97,2,-1
+
+  Paste 1,-1  
+  SetSheetTitle %F 
+
+Next
+Beep
+
+CreateLayout 6 4  2  22
